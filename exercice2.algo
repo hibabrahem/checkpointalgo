@@ -1,0 +1,53 @@
+PROCEDURE declaration_tab(ensemble1: ARRAY_OF INTEGER[]; ensemble2: ARRAY_OF INTEGER[])
+VAR
+    somme1: INTEGER = 0;
+    somme2: INTEGER = 0;
+    somme: INTEGER = 0;
+    i, j: INTEGER;
+
+BEGIN
+    write("Entrer votre 1er ensemble");
+    FOR i FROM 0 TO ensemble1.LENGTH-1 STEP 1 DO
+        read(ensemble1[i]);
+    END_FOR
+
+    write("Entrer votre 2ème ensemble");
+    FOR j FROM 0 TO ensemble2.LENGTH-1 STEP 1 DO
+        read(ensemble2[j]);
+    END_FOR
+
+    FOR i FROM 0 TO ensemble1.LENGTH-1 STEP 1 DO
+      
+        FOR j FROM 0 TO ensemble2.LENGTH-1 STEP 1  DO
+        trouve=false
+        if (ensemble1[i]=ensemble2[j]) THEN
+           trouve = true;
+       if ( trouve = false ) THEN
+    somme1 = somme1 + ensemble1[i];
+            
+            
+            END_IF
+        END_FOR
+    END_FOR
+
+    FOR j FROM 0 TO ensemble2.LENGTH-1 STEP 1 DO
+        
+         FOR i FROM 0 TO ensemble1.LENGTH-1 STEP 1  DO
+           trouve=false
+        if (ensemble2[j]=ensemble1[i]) THEN
+           trouve = true;
+       if ( trouve = false ) THEN
+          somme2 = somme2 + ensemble2[j];
+
+        END_FOR
+    END_FOR
+
+    somme = somme1 + somme2;
+    write("La somme des éléments distincts est :", somme);
+END
+ALGORITHM somme_distinct
+VAR
+  tab1, tab2: ARRAY  OF INTEGER 
+BEGIN
+    declaration_tab(tab1,tab2)
+END

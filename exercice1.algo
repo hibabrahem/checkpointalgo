@@ -1,0 +1,42 @@
+PROCEDURE saisir_phrase (VAR phrase: STRING)
+VAR c:CHAR
+BEGIN
+REPEAT
+     write("Entrer un charactere  : ")
+    read(c)
+    phrase=phrase+c
+UNTIL (c=".")
+   
+END
+
+PROCEDURE analyse_phrase(phrase: STRING)
+VAR
+    word_count: INTEGER = 0
+    vowel_count: INTEGER = 0
+    vowels: STRING = "aeiouyAEIOUY"
+BEGIN
+    FOR I FROM 1 TO LENGTH(phrase) DO
+        IF (phrase[I] = " ") THEN
+            word_count := word_count + 1
+        ELSE
+            FOR j FROM 1 TO LENGTH(vowels) DO
+                IF (phrase[I] = vowels[j]) THEN
+                    vowel_count := vowel_count + 1;
+                END_IF
+            END_FOR
+        END_IF
+    END_FOR
+
+    word_count := word_count + 1
+    write("Le nombre de mots est ", word_count);
+    write("Le nombre de voyelles est ", vowel_count);
+END
+
+ALGORITHM resultat
+VAR
+    phrase: STRING
+BEGIN
+    phrase:=""
+    saisir_phrase(phrase)
+    analyse_phrase(phrase)
+END

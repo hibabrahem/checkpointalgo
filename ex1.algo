@@ -1,0 +1,41 @@
+FUNCTION etudiant(n:INTEGER) : integer
+
+BEGIN
+    write("donner nb etudiant")
+    read(n) ;
+    return(n);
+END
+PROCEDURE informations(n:integer)
+VAR
+    nom,prenom:STRING
+    n,age,niveau:INTEGER
+    matiere1,matiere2,moyenne:FLOAT
+    
+niveau:
+BEGIN
+FOR I FROM 1 TO N DO
+    write("saisir votre nom")
+   nom:= read()
+    write ("saisir votre prenom")
+   prenom:=read()
+    write ("saisir votre age")
+   age:= read()
+    write ("saisir votre niveau")
+    niveau:=read()
+    write ("saisir votre matiere1")
+    matiere1:=read()
+    write ("saisir votre matiere2")
+    matiere2:=read()
+ moyenne=(matiere1+matiere2)/2
+    write (,nom,prenom,age,niveau,matiere1,matiere2,"son moyenne est:",moyenne)
+    
+    END_FOR
+END
+ALGORITHM aficchage
+VAR
+    n:integer
+    
+BEGIN
+  n= ETUDIANT()
+   information(n)
+END
