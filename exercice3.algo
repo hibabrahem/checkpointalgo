@@ -1,0 +1,50 @@
+FUNCTION dot_product ( v1,v2 : array_name : ARRAY_OF INTEGER[2];) : INTEGER
+VAR
+    ps:INTEGER
+    i,j:INTEGER
+    
+
+
+    
+BEGIN
+   FOR i FROM 0 TO v1.LENGTH-1 STEP 1  DO
+    write("entrer les cordonnée du 1er vecteur")
+    read(v1[i])
+   END_FOR
+   FOR j FROM 0 TO v2.LENGTH-1 STEP 1  DO
+    write("entrer les cordonnée du 1er vecteur")
+    read(v2[j])
+   END_FOR
+   ps := 0 ;
+   i=0;
+
+  REPEAT
+    FOR j FROM 0 TO v2.LENGTH-1 STEP 1  DO
+       ps=ps+( v1[i]*v2[j])
+       i=i+1
+    END_FOR
+  UNTIL (i>=v1.LENGTH-1)
+
+    RETURN ps ;
+END
+PROCEDURE check_orthogonality(N:INTEGER)
+VAR
+ i:INTEGER  
+BEGIN
+     write("donner le nombre des paires ")
+    FOR i FROM 1 TO n STEP 1  DO
+        dot_product(v1,v2);
+        IF (ps=0) THEN
+            write("les deux vecteur sont orthogonale")
+        END_IF
+    END_FOR
+END
+ALGORITHM 
+
+VAR
+    n:INTEGER
+    v1,v2:ARRAY_NAME OF INTEGER[2]
+BEGIN
+    n=0;
+    check_orthogonality(n)
+END
