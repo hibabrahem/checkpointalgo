@@ -11,7 +11,7 @@ VAR
     n,age,niveau:INTEGER
     matiere1,matiere2,moyenne:FLOAT
     
-niveau:
+
 BEGIN
 FOR I FROM 1 TO N DO
     write("saisir votre nom")
